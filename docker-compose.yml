@@ -1,0 +1,11 @@
+version: "3"
+services:
+  teeworlds-server:
+    image: audeldiaz/teeworlds-srv:0.7.5
+    ports:
+      - "8303:8303/udp"
+    volumes:
+      - data:/src/app/teeworlds/data
+
+volumes:
+  data:
