@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian:stable-slim
 ARG VERSION
 ENV VERSION=${VERSION:-0.7.5}
 WORKDIR /src/app
@@ -9,5 +9,5 @@ RUN tar -xf teeworlds-${VERSION}-linux_x86_64.tar.gz \
 WORKDIR /src/app/teeworlds
 COPY ./config/ config/
 VOLUME [ "/src/app/teeworlds/data/" ]
-EXPOSE 8303
-CMD /src/app/teeworlds/teeworlds_srv -f config/serverconfig.cfg
+EXPOSE 8303/udp
+CMD ./teeworlds_srv -f config/serverconfig.cfg
