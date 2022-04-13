@@ -5,7 +5,7 @@ services:
     ports:
       - "8303:8303/udp"
     volumes:
-      - data:/src/app/teeworlds/data
+      - data:/src/app/data
 
 volumes:
   data:
