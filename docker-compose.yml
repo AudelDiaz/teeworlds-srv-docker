@@ -6,7 +6,7 @@ services:
       - "8303:8303/udp"
     volumes:
       - data:/src/app/data
-      - ./config:/src/app/config:ro
+      - ./config/serverconfig.cfg:/src/app/serverconfig.cfg
 
 volumes:
   data:
