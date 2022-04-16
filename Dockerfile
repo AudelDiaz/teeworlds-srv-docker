@@ -20,6 +20,6 @@ ENV VERSION=${VERSION:-0.7.5}
 WORKDIR /src/app
 COPY --from=builder /src/app/teeworlds-${VERSION}/build/dist ./
 COPY ./config/ config/
-VOLUME [ "/src/app/data/" ]
+VOLUME [ "/src/app/data/", "/src/app/config/"]
 EXPOSE 8303/udp
 CMD ./teeworlds_srv -f config/serverconfig.cfg
